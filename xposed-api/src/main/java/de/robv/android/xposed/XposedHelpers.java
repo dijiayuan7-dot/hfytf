@@ -1,0 +1,2 @@
+package de.robv.android.xposed;
+public final class XposedHelpers { private XposedHelpers() {} public static Class<?> findClass(String n,ClassLoader l)throws ClassNotFoundException{return Class.forName(n,false,l);} public static Object callMethod(Object o,String n,Object... a)throws Throwable{ java.lang.reflect.Method m=null; for(java.lang.reflect.Method x:o.getClass().getMethods()){if(x.getName().equals(n)&&x.getParameterTypes().length==a.length){m=x;break;}} if(m==null) throw new NoSuchMethodException(n); m.setAccessible(true); return m.invoke(o,a); } }

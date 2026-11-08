@@ -1,0 +1,7 @@
+plugins { id 'com.android.application' }
+
+android { namespace 'com.example.aodsuspendtest'; compileSdk 35
+    defaultConfig { applicationId 'com.example.aodsuspendtest'; minSdk 27; targetSdk 35; versionCode 3; versionName '0.3' }
+}
+
+dependencies { compileOnly project(':xposed-api') }
